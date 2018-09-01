@@ -49,11 +49,8 @@ public class GraphDFS {
 					stack.push(i);
 				}
 			}
-		}
-		
+		}		
 		return sol;
-		
-		
 	}
 
 }

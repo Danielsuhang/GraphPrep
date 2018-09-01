@@ -49,6 +49,10 @@ public class main {
 
 
 		/* End graph Initialization */
+		
+		
+		
+		/* Start DFS Graph Traversal */
 		//Expected order: 2, 0, 1, 3
 		//OR
 		//Expected order: 2, 3, 0, 1
@@ -56,13 +60,28 @@ public class main {
 
 		GraphDFS g = new GraphDFS();
 		List<Integer> dfsAdjList = g.traverseDFSAdjList(two, graphSize);
+		System.out.println("DFS Traversals:");
 		printList(dfsAdjList);
 		
 		
 		//Graph adapted from: https://stackoverflow.com/questions/16261059/performing-dfs-and-bfs-on-a-directed-graph
 		List<Integer> dfsAdjMatrix = g.traverseDFSmatrix(0, adjMatrix, adjGraphSize);
 		printList(dfsAdjMatrix);
-
+		
+		/* End DFS Graph Traversal */
+		
+		/* Start BFS Graph Traversal */
+		//Expected BFS: 2 0 3 1
+		//OR
+		//Expected BFS: 2 3 0 1
+		
+		GraphBFS bfsGraph = new GraphBFS();
+		List<Integer> bfsAdjList = bfsGraph.traverseBFSAdjList(two, graphSize);
+		System.out.println("BFS Traversals:");
+		printList(bfsAdjList);
+		
+		List<Integer> bfsAdjMatrix = bfsGraph.traverseBFSmatrix(0, adjMatrix, adjGraphSize);
+		printList(bfsAdjMatrix);
 	}
 	private static void printList(List<Integer> list) {
 		if (list == null || list.size() == 0) {
